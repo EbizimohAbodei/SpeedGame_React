@@ -1,13 +1,102 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Laila&family=Literata&family=Montaga&family=Open+Sans:wght@300&family=Philosopher&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(159, 16, 145, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 255, 206, 1) 100%
+  );
+  font-family: "Philosopher", sans-serif;
+}
+
+header {
+  display: flex;
+  background-color: rgb(15, 109, 140);
+  height: auto;
+  align-items: center;
+  padding: 0.3rem;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+}
+
+header h1 {
+  margin: 1rem;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: whitesmoke;
+  font-family: "Montaga", serif;
+}
+
+.scoreboard {
+  margin: 4rem 0 3rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.score {
+  text-align: center;
+  margin: 2rem 0 5rem 0;
+}
+
+.circles {
+  margin: 3rem 5rem 4rem 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.buttons {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-family: "Montaga", serif;
+}
+
+.buttons:hover {
+  cursor: pointer;
+  background-color: rgb(4, 4, 70);
+  color: whitesmoke;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(15, 109, 140);
+  height: 3rem;
+  align-items: center;
+  padding: 0.3rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .circles {
+    margin: 3rem 1rem 4rem 1rem;
+  }
 }
