@@ -46,7 +46,10 @@ class App extends Component {
   clickHandler = (i) => {
     clickSound.play();
     if (this.state.current === i) {
-      this.setState({ score: this.state.score + 5 });
+      this.setState({
+        score: this.state.score + 5,
+        rounds: this.state.rounds - 1,
+      });
     } else if (this.state.current !== i) {
       this.endGame();
       return;
