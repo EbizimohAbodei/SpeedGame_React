@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Laila&family=Literata&family=Montaga&family=Open+Sans:wght@300&family=Philosopher&family=Press+Start+2P&display=swap");
+.gameOver {
+  display: flex;
+  height: 14rem;
+  width: 15rem;
+  background: linear-gradient(
+    90deg,
+    rgb(171, 117, 165) 0%,
+    rgb(155, 155, 190) 35%,
+    rgb(129, 194, 181) 100%
+  );
+  border-radius: 0.2rem;
+  position: absolute;
+  top: 20rem;
+  right: 23rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameOverText {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.5rem;
+}
+
+.scoreText {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  font-size: 9px;
+  padding: 0 1px;
+}
+
+.closeBtn:hover {
+  cursor: pointer;
+  background-color: rgb(241, 10, 10);
+}
+
+.message {
+  margin-top: -4rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .gameOver {
+    top: 18rem;
+    right: 9rem;
+  }
+}

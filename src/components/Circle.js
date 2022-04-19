@@ -1,13 +1,13 @@
 import React from "react";
-import classes from "./Circle.module.css";
+// import classes from "./Circle.module.css";
 
 const Circle = (props) => {
   return (
     <div>
       <button
-        className={`${classes.circle} ${props.active ?? "active"}`}
+        className={`circle ${props.active ? "active" : ""}`}
+        style={{ pointerEvents: props.disabled }}
         data-id={props.id}
-        style={props.style}
         onClick={props.click}
       ></button>
     </div>

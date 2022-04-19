@@ -5,7 +5,8 @@ const Button = (props) => {
     <div className="buttonContainer">
       <button
         className="buttons"
-        onClick={props.start_end}
+        data-id={props.id}
+        onClick={props.handleClick}
         type={props.type || "button"}
       >
         {props.text}
