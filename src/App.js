@@ -32,6 +32,8 @@ class App extends Component {
     circle: [],
     pace: 1400,
     rounds: 0,
+    topScores: [],
+    storedData: JSON.parse(localStorage.getItem("top-scores")) || [],
   };
   timer = undefined;
 
@@ -114,10 +116,10 @@ class App extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({ playerName: e.target.playerName.value });
-    console.log(e.target.playerName.value);
   };
 
   endGame = () => {
+    let scoreArr = [];
     clickSound.pause();
     startSound.pause();
     stopSound.play();
@@ -127,6 +129,14 @@ class App extends Component {
       disableStartButton: false,
     });
     clearTimeout(this.timer);
+
+    scoreArr = {
+      difficultyLevel: `${this.state.difficultyLevel}`,
+      playerName: `${this.state.playerName}`,
+      score: `${this.state.score}`,
+    };
+    this.state.storedData.push(scoreArr);
+    localStorage.setItem("top-scores", JSON.stringify(this.state.storedData));
   };
 
   closeHandler = () => {
@@ -215,6 +225,20 @@ class App extends Component {
               )}
             </div>
           )}
+        </div>
+        <div className="topScores">
+          <div className="hardDifficulty">
+            <h3>Hard</h3>
+            <p> David James - 20</p>
+          </div>
+          <div className="mediumDifficulty">
+            <h3>Medium </h3>
+            <p> David James - 20</p>
+          </div>
+          <div className="easyDifficulty">
+            <h3>Easy </h3>
+            <p> David James - 20</p>
+          </div>
         </div>
         <Footer />
       </div>
