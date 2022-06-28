@@ -34,6 +34,9 @@ class App extends Component {
     rounds: 0,
     topScores: [],
     storedData: JSON.parse(localStorage.getItem("top-scores")) || [],
+    hardScore: [],
+    mediumScore: [],
+    easyScore: [],
   };
   timer = undefined;
 
@@ -143,9 +146,22 @@ class App extends Component {
     window.location.reload();
   };
 
+  hardScores = this.state.storedData.filter(function(score) {
+    return score.difficultyLevel === "hard";
+  });
+  mediumScores = this.state.storedData.filter(function(score) {
+    return score.difficultyLevel === "medium";
+  });
+  easyScores = this.state.storedData.filter(function(score) {
+    return score.difficultyLevel === "easy";
+  });
+
   render() {
     return (
       <div className="App">
+        {console.log(this.hardScores)}
+        {console.log(this.easyScores)}
+        {console.log(this.mediumScores)}
         <Header />
         <div className="difficulty">
           {!this.state.playerName && [
@@ -226,19 +242,23 @@ class App extends Component {
             </div>
           )}
         </div>
-        <div className="topScores">
-          <div className="hardDifficulty">
-            <h3>Hard</h3>
-            <p> David James - 20</p>
-          </div>
-          <div className="mediumDifficulty">
-            <h3>Medium </h3>
-            <p> David James - 20</p>
-          </div>
-          <div className="easyDifficulty">
-            <h3>Easy </h3>
-            <p> David James - 20</p>
-          </div>
+        <div>
+          {(!this.state.playerName || !this.state.difficultyLevel) && (
+            <div className="topScores">
+              <div className="hardDifficulty">
+                <h3>Hard</h3>
+                <p> David James - 20</p>
+              </div>
+              <div className="mediumDifficulty">
+                <h3>Medium </h3>
+                <p> David James - 20</p>
+              </div>
+              <div className="easyDifficulty">
+                <h3>Easy </h3>
+                <p> David James - 20</p>
+              </div>
+            </div>
+          )}
         </div>
         <Footer />
       </div>
