@@ -5,16 +5,17 @@ const GameOver = (props) => {
   let message = "";
   if (props.score <= 40) {
     message = "You can do better";
-  } else if (props.score >= 100) {
+  } else if (props.score === 41 && props.score < 70) {
     message = "Nice! Your a rockstar";
   } else if (props.score >= 70) {
     message = "Woah! Maestro";
   } else {
-    message = "";
+    message = "You're a game cracker";
   }
 
   return (
     <div className={classes.gameOver}>
+      {console.log(props)}
       <div className="gameEndPopup">
         <button className={classes.closeBtn} onClick={props.close}>
           x

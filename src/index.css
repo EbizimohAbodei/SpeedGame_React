@@ -63,7 +63,7 @@ h2 {
 }
 
 .scoreboard {
-  margin: 4rem 0 3rem 0;
+  margin: 2rem 0 3rem 0;
   display: flex;
   justify-content: center;
 }
@@ -74,7 +74,7 @@ h2 {
 }
 
 .circleContainer {
-  margin: 3rem 5rem 4rem 5rem;
+  margin: 3rem 5rem 2.5rem 5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -107,7 +107,7 @@ h2 {
 }
 
 .buttons {
-  margin: 0.3rem 0.2rem 0.2rem 0.2rem;
+  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
   display: flex;
   justify-content: center;
   padding: 0.5rem;
@@ -131,7 +131,7 @@ h2 {
   flex-direction: row;
   justify-content: space-around;
   position: fixed;
-  top: 35rem;
+  top: 30rem;
   width: 100%;
   max-height: 10rem;
 }

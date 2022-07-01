@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Laila&family=Literata&family=Montaga&family=Open+Sans:wght@300&family=Philosopher&family=Press+Start+2P&display=swap");
 .gameOver {
   display: flex;
-  height: 14rem;
-  width: 15rem;
+  height: 20rem;
+  width: 25rem;
   background: linear-gradient(
     90deg,
     rgb(171, 117, 165) 0%,
@@ -11,10 +11,11 @@
   );
   border-radius: 0.2rem;
   position: absolute;
-  top: 20rem;
-  right: 23rem;
+  top: 15rem;
+  right: 32.5rem;
   justify-content: center;
   align-items: center;
+  opacity: 0.9;
 }
 
 .gameOverText {
@@ -45,9 +46,16 @@
   text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
   .gameOver {
-    top: 12rem;
-    right: 4rem;
+    top: 18rem;
+    right: 17rem;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .gameOver {
+    top: 20rem;
+    right: 47.5rem;
   }
 }

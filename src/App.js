@@ -34,9 +34,9 @@ class App extends Component {
     rounds: 0,
     topScores: [],
     storedData: JSON.parse(localStorage.getItem("top-scores")) || [],
-    hardScore: [],
-    mediumScore: [],
-    easyScore: [],
+    hardScore: "",
+    mediumScore: "",
+    easyScore: "",
   };
   timer = undefined;
 
@@ -149,19 +149,28 @@ class App extends Component {
   hardScores = this.state.storedData.filter(function(score) {
     return score.difficultyLevel === "hard";
   });
+  sortedHardScores = this.hardScores
+    .sort((a, b) => (a.score > b.score ? -1 : 1))
+    .slice(0, 3);
+
   mediumScores = this.state.storedData.filter(function(score) {
     return score.difficultyLevel === "medium";
   });
+  sortedMediumScores = this.mediumScores
+    .sort((a, b) => (a.score > b.score ? -1 : 1))
+    .slice(0, 3);
+
   easyScores = this.state.storedData.filter(function(score) {
     return score.difficultyLevel === "easy";
   });
 
+  sortedEasyScores = this.easyScores
+    .sort((a, b) => (a.score > b.score ? -1 : 1))
+    .slice(0, 3);
+
   render() {
     return (
       <div className="App">
-        {console.log(this.hardScores)}
-        {console.log(this.easyScores)}
-        {console.log(this.mediumScores)}
         <Header />
         <div className="difficulty">
           {!this.state.playerName && [
@@ -247,15 +256,27 @@ class App extends Component {
             <div className="topScores">
               <div className="hardDifficulty">
                 <h3>Hard</h3>
-                <p> David James - 20</p>
+                {this.sortedHardScores.map((score) => (
+                  <p key={score.playerName + score.score}>
+                    {score.playerName} - {score.score}
+                  </p>
+                ))}
               </div>
               <div className="mediumDifficulty">
                 <h3>Medium </h3>
-                <p> David James - 20</p>
+                {this.sortedMediumScores.map((score) => (
+                  <p key={score.playerName + score.score}>
+                    {score.playerName} - {score.score}
+                  </p>
+                ))}
               </div>
               <div className="easyDifficulty">
                 <h3>Easy </h3>
-                <p> David James - 20</p>
+                {this.sortedEasyScores.map((score) => (
+                  <p key={score.playerName + score.score}>
+                    {score.playerName} - {score.score}
+                  </p>
+                ))}
               </div>
             </div>
           )}
